@@ -26,5 +26,8 @@
       "tags": [],
       "implicitDependencies": ["salad"]
     }
+  },
+  "workspaceLayout": {
+    "appsDir": "projects"
   }
 }
