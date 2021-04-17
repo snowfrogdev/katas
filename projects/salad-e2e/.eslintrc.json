@@ -5,7 +5,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": "apps/salad-e2e/tsconfig.*?.json"
+        "project": "projects/salad-e2e/tsconfig.*?.json"
       },
       "rules": {}
     },

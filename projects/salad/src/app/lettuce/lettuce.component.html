@@ -1,0 +1,54 @@
+<form>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input
+      type="radio"
+      class="custom-control-input"
+      id="romaine"
+      name="lettuce"
+      value="romaine"
+      [(ngModel)]="salad.lettuce"
+      mdbInput
+    />
+    <label class="custom-control-label" for="romaine">Romaine</label>
+  </div>
+
+  <div class="custom-control custom-radio custom-control-inline">
+    <input
+      type="radio"
+      class="custom-control-input"
+      id="boston"
+      name="lettuce"
+      value="boston"
+      [(ngModel)]="salad.lettuce"
+      mdbInput
+    />
+    <label class="custom-control-label" for="boston">Boston</label>
+  </div>
+
+  <div class="custom-control custom-radio custom-control-inline">
+    <input
+      type="radio"
+      class="custom-control-input"
+      id="iceberg"
+      name="lettuce"
+      value="iceberg"
+      [(ngModel)]="salad.lettuce"
+      mdbInput
+    />
+    <label class="custom-control-label" for="iceberg">Iceberg</label>
+  </div>
+</form>
+
+<div class="btn-group mt-5" role="group">
+  <button
+    mdbBtn
+    type="button"
+    color="primary"
+    class="waves-light"
+    mdbWavesEffect
+    [disabled]="!salad.lettuce"
+    (click)="next()"
+  >
+    Next
+  </button>
+</div>

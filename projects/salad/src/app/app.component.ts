@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'katas-root',
+  selector: 'salad-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'salad';
-}
+export class AppComponent {}

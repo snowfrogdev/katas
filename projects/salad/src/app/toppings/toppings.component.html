@@ -1,0 +1,54 @@
+<form>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input
+      type="radio"
+      class="custom-control-input"
+      id="toastedSeeds"
+      name="toppings"
+      value="toasted seeds"
+      [(ngModel)]="salad.toppings"
+      mdbInput
+    />
+    <label class="custom-control-label" for="toastedSeeds">Toasted Seeds</label>
+  </div>
+
+  <div class="custom-control custom-radio custom-control-inline">
+    <input
+      type="radio"
+      class="custom-control-input"
+      id="pineNuts"
+      name="toppings"
+      value="pine nuts"
+      [(ngModel)]="salad.toppings"
+      mdbInput
+    />
+    <label class="custom-control-label" for="pineNuts">Pine Nuts</label>
+  </div>
+
+  <div class="custom-control custom-radio custom-control-inline">
+    <input
+      type="radio"
+      class="custom-control-input"
+      id="croutons"
+      name="toppings"
+      value="croutons"
+      [(ngModel)]="salad.toppings"
+      mdbInput
+    />
+    <label class="custom-control-label" for="croutons">Croutons</label>
+  </div>
+</form>
+
+<div class="btn-group mt-5" role="group">
+  <button
+    mdbBtn
+    type="button"
+    color="primary"
+    class="waves-light"
+    mdbWavesEffect
+    [disabled]="!salad.toppings"
+    (click)="next()"
+  >
+    Next
+  </button>
+</div>
