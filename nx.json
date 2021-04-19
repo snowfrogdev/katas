@@ -1,19 +1,33 @@
 {
   "implicitDependencies": {
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "katas",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
     }
   },
-  "workspaceLayout": { "appsDir": "projects" },
+  "workspaceLayout": {
+    "appsDir": "projects"
+  },
   "projects": {
-    "salad": { "tags": [] },
-    "salad-e2e": { "tags": [], "implicitDependencies": ["salad"] }
+    "salad-bar": {
+      "tags": []
+    },
+    "salad-bar-e2e": {
+      "tags": [],
+      "implicitDependencies": ["salad-bar"]
+    }
   }
 }

@@ -3,6 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
+  "defaultProject": "salad-bar",
   "schematics": {
     "@nrwl/angular": {
       "application": {
@@ -32,25 +33,22 @@
     }
   },
   "projects": {
-    "salad": {
+    "salad-bar": {
       "projectType": "application",
-      "root": "projects/salad",
-      "sourceRoot": "projects/salad/src",
+      "root": "projects/salad-bar",
+      "sourceRoot": "projects/salad-bar/src",
       "prefix": "salad",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/projects/salad",
-            "index": "projects/salad/src/index.html",
-            "main": "projects/salad/src/main.ts",
-            "polyfills": "projects/salad/src/polyfills.ts",
-            "tsConfig": "projects/salad/tsconfig.app.json",
+            "outputPath": "dist/projects/salad-bar",
+            "index": "projects/salad-bar/src/index.html",
+            "main": "projects/salad-bar/src/main.ts",
+            "polyfills": "projects/salad-bar/src/polyfills.ts",
+            "tsConfig": "projects/salad-bar/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "projects/salad/src/favicon.ico",
-              "projects/salad/src/assets"
-            ],
+            "assets": ["projects/salad-bar/src/favicon.ico", "projects/salad-bar/src/assets"],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
               "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
@@ -59,19 +57,16 @@
               "node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
               "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
               "node_modules/animate.css/animate.css",
-              "projects/salad/src/styles.scss"
+              "projects/salad-bar/src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/chart.js/dist/Chart.js",
-              "node_modules/hammerjs/hammer.min.js"
-            ]
+            "scripts": ["node_modules/chart.js/dist/Chart.js", "node_modules/hammerjs/hammer.min.js"]
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/salad/src/environments/environment.ts",
-                  "with": "projects/salad/src/environments/environment.prod.ts"
+                  "replace": "projects/salad-bar/src/environments/environment.ts",
+                  "with": "projects/salad-bar/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -99,65 +94,61 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "salad:build"
+            "browserTarget": "salad-bar:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "salad:build:production"
+              "browserTarget": "salad-bar:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "salad:build"
+            "browserTarget": "salad-bar:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "projects/salad/src/**/*.ts",
-              "projects/salad/src/**/*.html"
-            ]
+            "lintFilePatterns": ["projects/salad-bar/src/**/*.ts", "projects/salad-bar/src/**/*.html"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/projects/salad"],
+          "outputs": ["coverage/projects/salad-bar"],
           "options": {
-            "jestConfig": "projects/salad/jest.config.js",
+            "jestConfig": "projects/salad-bar/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "salad-e2e": {
-      "root": "projects/salad-e2e",
-      "sourceRoot": "projects/salad-e2e/src",
+    "salad-bar-e2e": {
+      "root": "projects/salad-bar-e2e",
+      "sourceRoot": "projects/salad-bar-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "projects/salad-e2e/cypress.json",
-            "tsConfig": "projects/salad-e2e/tsconfig.e2e.json",
-            "devServerTarget": "salad:serve"
+            "cypressConfig": "projects/salad-bar-e2e/cypress.json",
+            "tsConfig": "projects/salad-bar-e2e/tsconfig.e2e.json",
+            "devServerTarget": "salad-bar:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "salad:serve:production"
+              "devServerTarget": "salad-bar:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["projects/salad-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["projects/salad-bar-e2e/**/*.{js,ts}"]
           }
         }
       }
     }
-  },
-  "defaultProject": "salad"
+  }
 }

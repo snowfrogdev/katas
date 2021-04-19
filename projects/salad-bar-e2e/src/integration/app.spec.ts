@@ -38,9 +38,7 @@ describe('salad', () => {
           cy.contains('button', 'Next').should('be.disabled');
 
           cy.get('input').first().check({ force: true });
-          cy.contains('button', 'Next')
-            .click()
-            .then(runTest);
+          cy.contains('button', 'Next').click().then(runTest);
         }
       });
     }
@@ -65,5 +63,5 @@ describe('salad', () => {
     cy.contains('Lettuce: boston');
     cy.contains('Veggies: cucumber');
     cy.contains('Toppings: pine nuts');
-  })
+  });
 });

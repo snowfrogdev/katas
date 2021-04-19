@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'salad',
+  displayName: 'salad-bar',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/projects/salad',
+  coverageDirectory: '../../coverage/projects/salad-bar',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
