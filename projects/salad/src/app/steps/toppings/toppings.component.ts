@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Salad } from '../salad';
-import { SaladService } from '../salad.service';
+import { Salad } from '../../salad';
+import { SaladService } from '../../salad.service';
 
 @Component({
   templateUrl: './toppings.component.html',
@@ -18,5 +18,6 @@ export class ToppingsComponent implements OnInit {
 
   next(): void {
     this.router.navigateByUrl('salad');
+    localStorage.setItem('salad', JSON.stringify(this.saladService.salad));
   }
 }
