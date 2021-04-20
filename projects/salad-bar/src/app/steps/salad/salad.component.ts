@@ -6,12 +6,18 @@ import { SaladService } from '../../salad.service';
   templateUrl: './salad.component.html',
 })
 export class SaladComponent implements OnInit {
-  salad!: Salad;
+  salad!: Salad | null;
 
   constructor(private saladService: SaladService) {}
 
   ngOnInit(): void {
     this.salad = this.saladService.salad;
     this.saladService.step = 4;
+  }
+
+  confirm(): void {
+    this.salad = null;
+    this.saladService.salad = new Salad();
+    localStorage.setItem('salad', JSON.stringify(this.saladService.salad));
   }
 }

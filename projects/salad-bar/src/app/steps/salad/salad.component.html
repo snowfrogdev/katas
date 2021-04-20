@@ -1,4 +1,23 @@
-<h1 class="text-center">Your Salad</h1>
-<h3>Lettuce: {{ salad.lettuce }}</h3>
-<h3>Veggies: {{ salad.veggies }}</h3>
-<h3>Toppings: {{ salad.toppings }}</h3>
+<section *ngIf="salad">
+  <h1 class="text-center">Your Salad</h1>
+  <h3>Lettuce: {{ salad?.lettuce }}</h3>
+  <h3>Veggies: {{ salad?.veggies }}</h3>
+  <h3>Toppings: {{ salad?.toppings }}</h3>
+  
+  <div class="btn-group mt-5" role="group">
+    <button
+      mdbBtn
+      type="button"
+      color="primary"
+      class="waves-light"
+      mdbWavesEffect
+      (click)="confirm()"
+    >
+      Confirm
+    </button>
+  </div>
+</section>
+
+<section *ngIf="!salad">
+  <h1 class="text-center">Order confirmed</h1>
+</section>
