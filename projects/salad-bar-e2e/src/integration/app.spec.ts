@@ -1,49 +1,42 @@
 describe('salad', () => {
   it('happy path', () => {
     cy.visit('/');
+
     cy.url().should('include', '/lettuce');
-    cy.contains('li', 'Lettuce').should('have.class', 'active');
-    cy.contains('Romaine').click();
+
+    const stepper = new Stepper(['Lettuce', 'Veggies', 'Toppings', 'Salad']);
+    stepper.shouldBeOnStepIndex(0);
+
+    cy.get('input').should('not.have.property', 'checked');
+    cy.contains('button', 'Next').should('be.disabled');
+
+    cy.contains('label', 'Romaine').click();
     cy.contains('button', 'Next').click();
 
     cy.url().should('include', '/veggies');
-    cy.contains('li', 'Lettuce').should('have.class', 'completed');
-    cy.contains('li', 'Veggies').should('have.class', 'active');
-    cy.contains('Tomatoes').click();
+    stepper.shouldBeOnStepIndex(1);
+
+    cy.get('input').should('not.have.property', 'checked');
+    cy.contains('button', 'Next').should('be.disabled');
+
+    cy.contains('label', 'Tomatoes').click();
     cy.contains('button', 'Next').click();
 
     cy.url().should('include', '/toppings');
-    cy.contains('li', 'Lettuce').should('have.class', 'completed');
-    cy.contains('li', 'Veggies').should('have.class', 'completed');
-    cy.contains('li', 'Toppings').should('have.class', 'active');
-    cy.contains('Croutons').click();
+    stepper.shouldBeOnStepIndex(2);
+
+    cy.get('input').should('not.have.property', 'checked');
+    cy.contains('button', 'Next').should('be.disabled');
+
+    cy.contains('label', 'Croutons').click();
     cy.contains('button', 'Next').click();
 
     cy.url().should('include', '/salad');
-    cy.contains('li', 'Lettuce').should('have.class', 'completed');
-    cy.contains('li', 'Veggies').should('have.class', 'completed');
-    cy.contains('li', 'Toppings').should('have.class', 'completed');
-    cy.contains('li', 'Salad').should('have.class', 'active');
+    stepper.shouldBeOnStepIndex(3);
+
     cy.contains('Lettuce: romaine');
     cy.contains('Veggies: tomatoes');
     cy.contains('Toppings: croutons');
-  });
-
-  it('For each step, no items should be selected by default and the "Next" button should be disabled', () => {
-    cy.visit('/');
-    function runTest() {
-      cy.get('body').then(($body) => {
-        if ($body.find('button:contains("Next")').length) {
-          cy.get('input').should('not.have.property', 'checked');
-          cy.contains('button', 'Next').should('be.disabled');
-
-          cy.get('input').first().check({ force: true });
-          cy.contains('button', 'Next').click().then(runTest);
-        }
-      });
-    }
-
-    runTest();
   });
 
   it('Persists choices so that the user can pick up where he left off', () => {
@@ -65,3 +58,38 @@ describe('salad', () => {
     cy.contains('Toppings: pine nuts');
   });
 });
+
+class Stepper {
+  constructor(private stepNames: string[]) {}
+
+  shouldBeOnStepIndex(stepIndex: number): void {
+    cy.get('.stepper')
+      .children('li')
+      .then((items) => {
+        for (let i = 0; i < items.length; i++) {
+          switch (true) {
+            case i < stepIndex:
+              expect(items[i])
+                .to.contain.text(this.stepNames[i])
+                .and.to.contain.text((i + 1).toString())
+                .and.to.have.class('completed');
+              break;
+
+            case i === stepIndex:
+              expect(items[i])
+                .to.contain.text(this.stepNames[i])
+                .and.to.contain.text((i + 1).toString())
+                .and.to.have.class('active');
+              break;
+
+            case i > stepIndex:
+              expect(items[i])
+                .to.contain.text(this.stepNames[i])
+                .and.to.contain.text((i + 1).toString())
+                .and.to.not.have.class('active')
+                .and.to.not.have.class('completed');
+          }
+        }
+      });
+  }
+}
