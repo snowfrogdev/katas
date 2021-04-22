@@ -27,11 +27,11 @@ Hi and welcome to team SlädBär - you know we're cool and high tech because we 
 
 Over the next few sprints, we are planning improvements to our multi-step salad ordering process and you will be responsible for implementing these changes. If you are reading this README file, you have discovered the source code for SlädBär, good job. We also have a suite of end-to-end tests contained in the [projects/salad-bar-e2e/integration](../salad-bar-e2e/integration) folder.
 
-We encourage you to first get familiar with the app and the current requirements. Before you move on to your first sprint.
+We encourage you to first get familiar with the app and the current requirements, before you move on to your first sprint.
 
 ### Prerequisites
 
-Since you got hired at SlädBär as an Angular Developer, we expect you to have a basic level of familiarity with [Angular](https://angular.io/), as well as the NPM/Node.js ecosystem. But, just in case you are working from a brand new computer, don't forget that you need to have [Node.js](https://nodejs.org/en/) installed.
+Since you got hired at SlädBär as an Angular Developer, we expect you to have a basic level of familiarity with [Angular](https://angular.io/), as well as the NPM/Node.js ecosystem. Also, just in case you are working from a brand new computer, don't forget that you need to have [Node.js](https://nodejs.org/en/) installed.
 
 ### Install
 
