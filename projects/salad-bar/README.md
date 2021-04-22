@@ -4,7 +4,7 @@ Source: https://github.com/snowfrogdev/katas
 
 ## Background
 
-This kata puts you in the role of an Angular developer having to work with someone else's code. The current code base does not always follow best practices. You'll be presented with new requirements to implement. You'll find that implementing each new requirement with the current structure requires changes to many components and files.
+This kata puts you in the role of an Angular developer having to work with someone else's code. The current code base does not always follow best practices. You'll be presented with new requirements to implement. You'll find that implementing each new requirement, without changing the current structure, requires changes to many components and files.
 
 The idea is for you to refactor the code as you implement the new requirements. The objective is that with successive improvements, each new requirement should be easier to implement. If you do a really good job of refactoring, the last change request should only require you to modify one or two lines of code.
 
@@ -29,9 +29,13 @@ Over the next few sprints, we are planning improvements to our multi-step salad 
 
 We encourage you to first get familiar with the app and the current requirements. Before you move on to your first sprint.
 
+### Prerequisites
+
+Since you got hired at SlädBär as an Angular Developer, we expect you to have a basic level of familiarity with [Angular](https://angular.io/), as well as the NPM/Node.js ecosystem. But, just in case you are working from a brand new computer, don't forget that you need to have [Node.js](https://nodejs.org/en/) installed.
+
 ### Install
 
-If you haven't already, run the following command to install of the needed dependencies.
+If you haven't already, run the following command to install the needed dependencies for this project.
 
 ```bash
 npm install
@@ -39,4 +43,12 @@ npm install
 
 ### Development
 
-We suggest that you use the following method to get your work done at SlädBär.
+You will be working through a series of sprints. At the end of each sprint, we will bump up the app's version. The app is currently in [beta](./sprints/sprint-0-beta.md). Your first sprint is [sprint 1](./sprints1/sprint-1.md), working towards version 1 of the app. Each sprint will introduce changes to existing requirements or entirely new requirements. For each version of the app, there is a corresponding suite of [e2e tests](../salad-bar-e2e/src/integration/version-0-beta.spec.ts) already prepared for you.
+
+For development we recommend that you run the dev server along with the e2e tests by simply running the following command.
+
+```bash
+nx e2e salad-bar-e2e --watch
+```
+
+Then select the test suite corresponding to the sprint you are currently working on. Tests for previous versions of the app are NOT expected to pass and there is no need to run them.

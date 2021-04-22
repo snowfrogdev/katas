@@ -1,6 +1,6 @@
 import { StepperTestHelper } from '../helpers/stepper-test-helper';
 
-describe('Version 1', () => {
+describe('Version 0 beta', () => {
   let steps: Step[];
   let stepper: StepperTestHelper;
 
