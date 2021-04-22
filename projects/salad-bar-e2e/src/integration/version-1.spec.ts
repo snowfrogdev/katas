@@ -6,8 +6,9 @@ describe('Version 0 beta', () => {
 
   beforeEach(() => {
     steps = [
-      { name: 'Lettuce', options: ['Romaine', 'Boston', 'Iceberg'] },
+      { name: 'Lettuce', options: ['Romaine', 'Boston', 'Iceberg', 'Green Leaf'] },
       { name: 'Veggies', options: ['Cucumber', 'Tomatoes', 'Carrots'] },
+      { name: 'Cheese', options: ['Parmesan', 'Mozzarella', 'Feta'] },
       { name: 'Toppings', options: ['Toasted Seeds', 'Pine Nuts', 'Croutons'] },
     ];
     stepper = new StepperTestHelper([...steps.map((step) => step.name), 'Salad']);
