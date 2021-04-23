@@ -19,6 +19,7 @@ This kata should offer the opportunity to learn the advantages of applying some 
 - [Smart vs presentational components](https://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/)
 - [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
 - [Single Responsability Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+- [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
 - [Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
 ## Instructions
