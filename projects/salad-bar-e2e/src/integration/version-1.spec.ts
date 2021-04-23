@@ -46,6 +46,8 @@ describe('Version 0 beta', () => {
 
     cy.contains('button', 'Confirm').click();
     cy.contains('Order Confirmed', { matchCase: false });
+
+    cy.contains('button', 'Confirm').should('not.exist');
   });
 
   it('Persists choices so that the user can pick up where he left off', () => {
@@ -70,9 +72,6 @@ describe('Version 0 beta', () => {
     for (const choice of choices) {
       cy.contains(`${choice.category}: ${choice.name}`, { matchCase: false });
     }
-
-    cy.contains('button', 'Confirm').click();
-    cy.contains('Order Confirmed', { matchCase: false });
   });
 
   it('Prevents users from skipping steps by navigating', () => {
@@ -97,9 +96,6 @@ describe('Version 0 beta', () => {
     for (const choice of choices) {
       cy.contains(`${choice.category}: ${choice.name}`, { matchCase: false });
     }
-
-    cy.contains('button', 'Confirm').click();
-    cy.contains('Order Confirmed', { matchCase: false });
   });
 });
 
