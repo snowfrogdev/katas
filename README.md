@@ -6,6 +6,6 @@ This repository contains a collection of [programming katas](https://en.wikipedi
 
 ## Listings
 
-### [Salad Bar kata](./projects/salad-bar/README.md)
+### [Salad Bar kata](./projects/salad-bar/README.md) - Work in progress
 
 This kata puts you in the role of an Angular developer having to work with someone else's code. The current code base does not always follow best practices. You'll be presented with new requirements to implement.
